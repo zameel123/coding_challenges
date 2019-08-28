@@ -1,0 +1,33 @@
+a=input().split()
+i=0
+l=len(a)
+while(i<l):
+    if(a[i]=="multiply"):
+        a[i-1]=int(a[i-1])*int(a[i+1])
+        a.pop(i+1)
+        a.pop(i)
+        l=l-2
+        i=i-2
+    if(a[i]=="divide"):
+        a[i-1]=int(a[i-1])/int((a[i+1]))
+        a.pop(i+1)
+        a.pop(i)
+        l=l-2
+        i=i-3
+    i=i+1
+i=0
+while(i<l):
+    if(a[i]=="add"):
+        a[i-1]=int(a[i-1])+int(a[i+1])
+        a.pop(i+1)
+        a.pop(i)
+        l=l-2
+        i=i-2
+    if(a[i]=="subtract"):
+        a[i-1]=int(a[i-1])-int((a[i+1]))
+        a.pop(i+1)
+        a.pop(i)
+        l=l-2
+        i=i-3
+    i=i+1
+print(a[0])
